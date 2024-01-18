@@ -31,6 +31,8 @@ class Server():
             self.accept_socket, self.client_address = self.server_socket.accept()
             print(str(self.client_address), 'connect accept')
 
+            self.comuniCation()
+
         except KeyboardInterrupt as e:
             print("서버 중지")
 
@@ -40,5 +42,7 @@ class Server():
                 print(self.accept_socket)
                 self.accept_socket.close()
 
-    def comunication(self):
-        pass
+    def communiCation(self):
+        while True:
+            recv_msg = self.accept_socket.recv(1024).decode('utf-8')
+            print("read message\n", recv_msg)
