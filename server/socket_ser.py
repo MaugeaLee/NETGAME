@@ -31,7 +31,7 @@ class Server():
             self.accept_socket, self.client_address = self.server_socket.accept()
             print(str(self.client_address), 'connect accept')
 
-            self.comuniCation()
+            self.communiCation()
 
         except KeyboardInterrupt as e:
             print("서버 중지")
